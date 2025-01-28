@@ -176,9 +176,10 @@
     <p>Always replace tires when they show signs of wear or if they exceed their recommended lifespan.</p>
 
     <div class="image-gallery">
-      <img src="tyre1.jpg" alt="Tire 1">
-      <img src="tyre2.avif" alt="Tire 2">
-      <img src="tyre3.jpg" alt="Tire 3">
+      <img src="{{ url_for('static', filename='tyre1.jpg') }}" alt="Tire 1">
+      <img src="{{ url_for('static', filename='tyre2.avif') }}" alt="Tire 2">
+      <img src="{{ url_for('static', filename='tyre3.jpg') }}" alt="Tire 3">
+
     </div>
   </section>
 
