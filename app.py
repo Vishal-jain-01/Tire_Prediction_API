@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 import numpy as np
 import scipy.io
 from flask_cors import CORS
@@ -13,7 +13,9 @@ intercept = mat['intercept'][0][0]  # Extract the scalar value
 
 @app.route('/')
 def home():
-    return "Welcome to the Tire Prediction API!"
+    return render_template('index.html')
+
+
 
 # Define the /predict route for POST requests
 @app.route('/predict', methods=['POST'])
