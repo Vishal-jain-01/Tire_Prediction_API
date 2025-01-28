@@ -14,3 +14,4 @@ scipy==1.11.2
 six==1.17.0
 tzdata==2025.1
 Werkzeug==2.2.3
+flask-cors==5.0.0
