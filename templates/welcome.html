@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Tire Accuracy Prediction</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -66,11 +66,12 @@
         <h1>Welcome to Tire Accuracy Prediction</h1>
         <p>Explore our advanced tool to predict tire performance and make informed decisions.</p>
         <div class="tire-images">
-            <img src='tyre1.jpg' alt="Tire 1">
-            <img src='tyre2.avif' alt="Tire 2">
-            <img src='tyre3.jpg' alt="Tire 3">
+            <img src="{{ url_for('static', filename='images/tyre1.jpg') }}" alt="Tire 1">
+            <img src="{{ url_for('static', filename='images/tyre2.avif') }}" alt="Tire 2">
+            <img src="{{ url_for('static', filename='images/tyre3.jpg') }}" alt="Tire 3">
         </div>
-        <button class="visit-button" onclick="location.href='index.html'">Visit the Site</button>
+        <button onclick="window.location.href='/index'">Visit the Site</button>
+
     </div>
 </body>
 </html>
