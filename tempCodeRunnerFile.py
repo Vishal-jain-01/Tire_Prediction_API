@@ -1,10 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 import numpy as np
 import scipy.io
 from flask_cors import CORS
+import os
 
-
-app = Flask(__name__)  # Corrected typo here
+app = Flask(__name__, static_folder='static', template_folder='templates')
+ # Corrected typo here
 CORS(app)
 # Load MATLAB model coefficients
 mat = scipy.io.loadmat('model_coeffs.mat')  # Replace with the actual file path
@@ -13,7 +14,14 @@ intercept = mat['intercept'][0][0]  # Extract the scalar value
 
 @app.route('/')
 def home():
-    return "Welcome to the Tire Prediction API!"
+    return render_template('EntryForm.html')
+
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
+
+
+
 
 # Define the /predict route for POST requests
 @app.route('/predict', methods=['POST'])
@@ -35,5 +43,9 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Use PORT from environment or default to 5000
+    app.run(host='0.0.0.0', port=port, debug=True)
+

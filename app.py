@@ -4,7 +4,8 @@ import scipy.io
 from flask_cors import CORS
 import os
 
-app = Flask(__name__)  # Corrected typo here
+app = Flask(__name__, static_folder='static', template_folder='templates')
+ # Corrected typo here
 CORS(app)
 # Load MATLAB model coefficients
 mat = scipy.io.loadmat('model_coeffs.mat')  # Replace with the actual file path
@@ -13,7 +14,12 @@ intercept = mat['intercept'][0][0]  # Extract the scalar value
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('EntryForm.html')
+
+@app.route('/welcome')
+def welcome():
+    return render_template('welcome.html')
+
 
 
 
