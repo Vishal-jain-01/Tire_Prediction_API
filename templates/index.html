@@ -254,9 +254,9 @@
             </ul>
         </p>
         <div class="image-gallery" style="gap: 6rem;">
-            <img src="f.jpg" alt="Tire1">
-            <img src="g.jpg" alt="Tire 2">
-            <img src="h.jpg" alt="Tire 3">
+            <img src="{{ url_for('static', filename='images/f.jpg') }}" alt="Tire1">
+            <img src="{{ url_for('static', filename='images/g.jpg') }}" alt="Tire 2">
+            <img src="{{ url_for('static', filename='images/h.jpg') }}" alt="Tire 3">
         </div>
     </section>
     <style>
@@ -346,25 +346,25 @@
             <h3> 1: High-Performance Tires</h3>
             <p>High-performance tires are designed for superior grip and stability, making them ideal for sports cars. Our model predicts high accuracy for these tires due to their reinforced sidewalls and advanced rubber compounds. Speed ratings for UHP tires range from Z rated 240+ km/h to W, Y and (Y) for 300+ km/h. Examples of the HIGH PERFORMANCES TYRE are :- HangKook, TOYO Tyres Etc</p>
             <p>Predicted accuracy: 95%</p>
-            <img src="b.jpg" alt="High Performance Tire" width="200">
+            <img src="{{ url_for('static', filename='images/b.jpg') }}" alt="High Performance Tire" width="200">
         </div>
         <div class="example-card">
             <h3> 2: All-Season Tires</h3>
             <p>All-season tires provide balanced performance in various weather conditions. Our model estimates their accuracy by analyzing tread depth, material composition, and wear resistance. All season tyre have a tread pattern that is designed to provide traction in a variety of weather conditions. Examples of the ALL SEASON TYRE are :- Michelin, Bridgestone, Goodyear Etc</p>
             <p> Predicted accuracy: 85%</p>
-            <img src="c.jpg" alt="All Season Tire" width="200">
+            <img src="{{ url_for('static', filename='images/c.jpg') }}" alt="All Season Tire" width="200">
         </div>
         <div class="example-card">
             <h3> 3: Off-Road Tires</h3>
             <p>Off-road tires have deep treads for better traction on rough terrains. Our accuracy prediction considers tread pattern efficiency and rubber durability. Built in the rim guard to protect the wheel from damage. Examples of the OFF ROAD TYRE are :- BFGoodrich, Cooper, Falken Etc</p>
             <p> Predicted accuracy: 90%</p>
-            <img src="d.jpg" alt="Off Road Tire" width="200">
+            <img src="{{ url_for('static', filename='images/d.jpg') }}" alt="Off Road Tire" width="200">
         </div>
         <div class="example-card">
             <h3> 4: Economy Tires</h3>
             <p>Economy tires focus on affordability and durability. The accuracy prediction evaluates rolling resistance and longevity to help users make cost-effective choices. It provide the budget friendly options for the drivers. Examples of the ECONOMY TYRE are :- Nankang, Federal, Nexen Etc</p>
             <p> Predicted accuracy: 80%</p>
-            <img src="e.jpg" alt="Economy Tire" width="200">
+            <img src="{{ url_for('static', filename='images/e.jpg') }}" alt="Economy Tire" width="200">
         </div>
     </section>
     <footer>
