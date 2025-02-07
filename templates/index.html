@@ -451,11 +451,11 @@
         <h2>Contact Us</h2>
         <div class="container" style="text-align: center;">
         </div>
-        <div class="contact-info" style="text-align: center;"></div>
+        <div class="contact-info" style="text-align: center;">
             <h3>Contact Details</h3>
             <p><strong>Phone:</strong> +91 6397151942 , +91 7983337456</p>
-            <p><strong>Email:</strong> vishal112006jain@gmail.com , vchaudhary0428@gmail.com</p>
-            <p><strong>Address:</strong> Meerut,India</p>
+            <p class="email"><strong>Email:</strong> <br> vishal112006jain@gmail.com <br> vchaudhary0428@gmail.com</p>
+            <p><strong>Address:</strong> Meerut, India</p>
             <a href="https://wa.me/6397151942" target="_blank">
                 <img src="{{ url_for('static', filename='images/whatsappicon.png') }}" alt="Chat with us on WhatsApp" style="display: inline-block;">
             </a>
@@ -464,6 +464,48 @@
             </a>
         </div>
     </section>
+    
+    <style>
+        /* Ensure proper spacing and alignment for contact details */
+        .contact-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+    
+        /* Style for emails (display as block on mobile) */
+        .email {
+            word-break: break-word;
+        }
+    
+        /* Responsive styles for mobile screens */
+        @media (max-width: 600px) {
+            .contact-info p {
+                font-size: 1em;
+                text-align: left;
+                padding-left: 10px;
+            }
+            
+            .email {
+                display: block;
+                text-align: left;
+                padding-left: 10px;
+            }
+    
+            /* Align phone, email, and address properly */
+            .contact-info {
+                text-align: left;
+                padding-left: 10px;
+            }
+    
+            /* Make images more visible */
+            .contact-info img {
+                width: 40px; /* Resize images for mobile */
+                height: auto;
+                margin: 10px;
+            }
+        }
+    </style>
+    
     <footer>
         <p>Copyright &copy; 2025 Tire Prediction Tool. All Rights Reserved.</p>
     </footer>
