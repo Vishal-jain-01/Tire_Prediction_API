@@ -275,6 +275,17 @@
         <a href="#examples" data-title="Examples">Examples</a>
         <a href="#contact" data-title="Contact">Contact</a>
     </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const homeButton = document.querySelector('nav a[href="#home"]');
+            
+            // Event listener for the "Home" link in the nav
+            homeButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                window.location.href = '/'; // Redirect to the welcome page
+            });
+        });
+    </script>
     <section id="introduction" class="info-section">
         <h2>Introduction</h2>
         <p>Welcome to our Tire Accuracy Prediction Tool. This tool helps you predict the accuracy of tire performance based on various parameters such as Load Index, Width, and Cost Price. Our model uses advanced machine learning techniques to provide you with reliable predictions. Whether you are a car enthusiast, a mechanic, or just a regular driver, understanding tire performance can help you make informed decisions about tire purchases and maintenance. Our tool aims to simplify this process by offering accurate predictions and valuable insights.</p>
@@ -434,6 +445,20 @@
             <p>Economy tires focus on affordability and durability. The accuracy prediction evaluates rolling resistance and longevity to help users make cost-effective choices. It provide the budget friendly options for the drivers. Examples of the ECONOMY TYRE are :- Nankang, Federal, Nexen Etc</p>
             <p> Predicted accuracy: 80%</p>
             <img src="{{ url_for('static', filename='images/e.jpg') }}" alt="Economy Tire" width="200">
+        </div>
+    </section>
+    <section id="contact" class="info-section">
+        <h2>Contact Us</h2>
+        <div class="container" style="text-align: center;">
+        </div>
+        <div class="contact-info" style="text-align: center;"></div>
+            <h3>Contact Details</h3>
+            <p><strong>Phone:</strong> +91 6397151942</p>
+            <p><strong>Email:</strong> vishal112006jain@gmail.com</p>
+            <p><strong>Address:</strong> Meerut,India</p>
+            <a href="https://wa.me/6397151942" target="_blank">
+                <img src="{{ url_for('static', filename='images/whatsappicon.png') }}" alt="Chat with us on WhatsApp" style="display: inline-block;">
+            </a>
         </div>
     </section>
     <footer>
