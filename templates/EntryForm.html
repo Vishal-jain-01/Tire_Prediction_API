@@ -94,10 +94,7 @@ body {
     </style>
 
     <script>
-        // Show an alert when the entry form page is loaded
-window.onload = function () {
-    alert("You are now on the Tire Entry Form. Please fill in the details carefully! Ensure you should accurately measured your parameters before checking the accuracy");
-};
+       
 
         // Event listener for form submission
         document.getElementById("tireForm").addEventListener("submit", async (e) => {
@@ -152,5 +149,15 @@ window.onload = function () {
             });
         });
     </script>
+    <script>
+        window.onload = function () {
+            // Check if the user came from the index page
+            if (sessionStorage.getItem("fromIndex") === "true") {
+                alert("You are now on the Tire Entry Form. Please ensure accurate measurements before checking the accuracy.");
+                sessionStorage.removeItem("fromIndex"); // Remove flag after showing alert
+            }
+        };
+    </script>
+    
 </body>
 </html>
