@@ -13,46 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <style>
 
-
-/* Default styles for large screens */
-body {
-    font-size: 16px;
-    padding: 20px;
-}
-
-/* For tablets (width < 1024px) */
-@media (max-width: 1024px) {
-    body {
-        font-size: 14px;
-        padding: 15px;
-    }
-}
-
-/* For mobile devices (width < 768px) */
-@media (max-width: 768px) {
-    body {
-        font-size: 12px;
-        padding: 10px;
-    }
-
-    .container {
-        flex-direction: column; /* Stack elements vertically */
-    }
-}
-
-
-
-
-
-
-
-
-
         body {
             font-family: 'Roboto', sans-serif;
             color: #e5e6e7; 
             overflow-x: hidden;
             background-color: #111111;
+            margin: 0;
         }
         .background {
             position: fixed;
@@ -81,6 +47,7 @@ body {
         header h1 {
             display: inline-block;
             transition: transform 0.6s ease-in-out;
+            font-size: 2rem;
         }
         header h1:hover {
             animation: titleAnimation 1s infinite alternate;
@@ -97,16 +64,19 @@ body {
             display: flex;
             justify-content: center;
             background-color: rgba(172,137,104,0.8);
-            padding: 1rem;
+            padding: 0.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             opacity: 0;
+            flex-wrap: wrap;
         }
         nav a {
             color: #3E362E; 
             text-decoration: none;
-            margin: 0 1rem;
+            margin: 0.5rem;
             font-weight: bold;
             position: relative;
+            font-size: 1rem;
+
         }
         nav a:hover {
             text-decoration: underline;
@@ -124,19 +94,20 @@ body {
             opacity: 0;
             transition: opacity 0.6s, transform 0.6s;
             white-space: nowrap;
+            font-size: 0.8rem;
         }
         nav a:hover::after {
             opacity: 1;
             transform: translateX(-50%) translateY(-10px);
         }
         section {
-            padding: 2rem;
+            padding: 1rem;
             margin: 1rem auto;
-            max-width: 800px;
+            max-width: 95%;
             opacity: 0;
         }
         .form-section {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
         label {
             display: block;
@@ -174,21 +145,21 @@ body {
             color: #fefbfb; 
         }
         .info-section {
-            padding: 1.5rem;
-            margin-top: 2rem;
+            padding: 1rem;
+            margin-top: 1rem;
         }
         .info-section h2 {
-            margin-top: 0;
+            margin-top: 1rem;
             text-align: center;
             margin-bottom: 2rem; /* Increased margin-bottom */
-            font-size: 2rem; /* Increased font size */
+            font-size: 1.5rem; /* Increased font size */
             font-weight: bold; /* Make bold */
             transition: transform 0.6s ease-in-out;
         }
         .info-section p {
             line-height: 1.6;
             text-align: justify;
-            margin-top: 2rem; /* Increased margin-top */
+            margin-top: 1rem; /* Increased margin-top */
         }
         .info-section h2:hover {
             transform: scale(1.1);
@@ -196,12 +167,13 @@ body {
         .image-gallery {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.5rem;
             margin-top: 1rem;
+            overflow-x: auto;
         }
         .image-gallery img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
             transform: translateY(100px);
@@ -218,16 +190,17 @@ body {
         }
         footer {
             text-align: center;
-            padding: 1rem;
+            padding: 0.5rem;
             background-color: rgba(172,137,104,0.8);
             color: #3E362E; 
-            margin-top: 2rem;
+            margin-top: 1rem;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
             opacity: 0;
+            font-size: 0.8rem;
         }
         .example-card {
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
+            padding: 0.5rem;
             border-radius: 10px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
             margin-bottom: 1rem;
@@ -239,16 +212,54 @@ body {
         }
         .example-card h3 {
             margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #fff;
+            
         }
         .example-card p {
             color: #ddd;
+            font-size: 0.9rem;
         }
         .example-card img {
             display: block;
-            margin: 1rem auto; /* Center the image */
+            margin: 0.5rem auto; /* Center the image */
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+
         }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                margin: 0.3rem;
+            }
+
+            .info-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .example-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .example-card p {
+                font-size: 0.8rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -313,16 +324,10 @@ body {
     </style>
     <!-- Button to open tire details form -->
     <div class="button-container">
-        <button id="open-form-btn" style="font-size: 1.5rem; padding: 1rem 2rem; background-color: #93785B; color: white; border: none; border-radius: 5px; transition: background-color 0.6s;">Let's Check the Accuracy</button>
+        <button id="open-form-btn" style="font-size: 1.2rem; padding: 0.8rem 1.5rem; background-color: #93785B; color: white; border: none; border-radius: 5px; transition: background-color 0.6s;">Let's Check the Accuracy</button>
     </div>
 
-    <!-- Modal for tire details form -->
-    <div id="tire-details-modal" class="modal">
-        <div class="modal-content" style="margin: 5% auto;">
-            <span class="close-btn">&times;</span>
-            <iframe src="/entryform" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-        </div>
-    </div>
+    
     <style>
         .modal {
             display: none;
@@ -332,19 +337,19 @@ body {
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
+            overflow: auto;
             background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
         }
         .modal-content {
             background-color: tan;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            height: 80%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 0;
+            padding: 0;
+            border: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+            box-shadow: none;
             position: relative;
         }
         .close-btn {
@@ -364,20 +369,46 @@ body {
         }
     </style>
     <script>
-    document.getElementById('open-form-btn').addEventListener('click', () => {
-        document.getElementById('tire-details-modal').style.display = 'block';
-    });
+        document.addEventListener('DOMContentLoaded', function () {
+            const formButton = document.querySelector('nav a[href="#form"]');
+            const accuracyButton = document.getElementById('open-form-btn');
+            const modal = document.getElementById('tire-details-modal');
+            const closeBtn = document.querySelector('.close-btn');
 
-    document.querySelector('.close-btn').addEventListener('click', () => {
-        document.getElementById('tire-details-modal').style.display = 'none';
-    });
+            // Function to open the modal
+            function openModal() {
+                modal.style.display = 'block';
+            }
 
-    window.addEventListener('click', (event) => {
-        if (event.target == document.getElementById('tire-details-modal')) {
-            document.getElementById('tire-details-modal').style.display = 'none';
-        }
-    });
+            // Event listener for the "Form" link in the nav
+            formButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                openModal(); // Open the modal
+            });
+
+            // Event listener for the "Let's Check the Accuracy" button
+            accuracyButton.addEventListener('click', openModal);
+
+            // Event listener for the close button
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            // Close the modal if the user clicks outside of it
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
     </script>
+
+<div id="tire-details-modal" class="modal">
+    <div class="modal-content" >
+        <span class="close-btn">&times;</span>
+        <iframe src="/entryform" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+    </div>
+</div>
     <section id="examples" class="info-section">
         <h2>Examples</h2>
         <div class="example-card">
@@ -558,46 +589,6 @@ body {
         });
     </script>
 
-    <script>
-        document.addEventListener("scroll", () => {
-            const images = document.querySelectorAll(".image-gallery img");
-            const windowHeight = window.innerHeight;
-
-            images.forEach(img => {
-                const rect = img.getBoundingClientRect();
-                if (rect.top <= windowHeight - 100) {
-                    img.classList.add("visible");
-                }
-            });
-        });
-
-        inputs = document.querySelectorAll("input");
-        inputs.forEach((input, index) => {
-            input.addEventListener("keydown", (event) => {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    const nextInput = inputs[index + 1];
-                    if (nextInput) {
-                        nextInput.focus();
-                    } else {
-                        document.getElementById("submit-btn").focus();
-                    }
-                }
-            });
-        });
-
-        // Anime.js animations
-        document.addEventListener("DOMContentLoaded", () => {
-            anime({
-                targets: 'header, nav, section, footer',
-                opacity: [0, 1],
-                translateY: [-50, 0],
-                delay: anime.stagger(200),
-                duration: 1000,
-                easing: 'easeOutExpo'
-            });
-        });
-    </script>
   
 </body>
 </html>

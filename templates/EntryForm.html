@@ -6,39 +6,7 @@
     <title>Tire Details</title>
     <style>
 
-        /* Default styles for large screens */
 body {
-    font-size: 16px;
-    padding: 20px;
-}
-
-/* For tablets (width < 1024px) */
-@media (max-width: 1024px) {
-    body {
-        font-size: 14px;
-        padding: 15px;
-    }
-}
-
-/* For mobile devices (width < 768px) */
-@media (max-width: 768px) {
-    body {
-        font-size: 12px;
-        padding: 10px;
-    }
-
-    .container {
-        flex-direction: column; /* Stack elements vertically */
-    }
-}
-
-
-
-
-
-
-
-        body {
             font-family: 'Arial', sans-serif;
             color: black; 
             overflow-x: hidden;
@@ -55,13 +23,40 @@ body {
             margin-top: 20px;
         }
         #loadIndex {
-            width: 30%; 
+            width: 100%; 
             box-sizing: border-box; 
         }
+
+        @media (min-width: 600px) {
+            #form {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            #loadIndex {
+                width: 30%;
+            }
+        }
+
+@media (max-width: 599px) {
+    #form {
+        padding: 0 10px;
+    }
+
+    #form input, #form button {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
     </style>
 </head>
 <body>
-    <section id="form" class="info-section" style="text-align: center; margin: 0 auto; max-width: 600px; animation: fadeIn 2s ease-in-out;">
+    <section id="form" class="info-section" style="text-align: center; margin: 0 auto; animation: fadeIn 2s ease-in-out;">
         <h2 class="animated-heading">Enter Tire Details</h2>
         <p>Please enter the following details to predict the tire accuracy:</p>
         
