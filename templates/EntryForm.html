@@ -75,7 +75,8 @@ body {
             </div>
         </form>
 
-        <h2 id="output" class="animated-heading" min="0" max="100">Your predicted tire accuracy will appear here.</h2>
+        <h2 id="output" class="animated-heading" >Your predicted tire accuracy will appear here.</h2>
+
     </section>
 
     <style>
@@ -93,6 +94,11 @@ body {
     </style>
 
     <script>
+        // Show an alert when the entry form page is loaded
+window.onload = function () {
+    alert("You are now on the Tire Entry Form. Please fill in the details carefully! Ensure you should accurately measured your parameters before checking the accuracy");
+};
+
         // Event listener for form submission
         document.getElementById("tireForm").addEventListener("submit", async (e) => {
             e.preventDefault();  // Prevent the page from reloading
