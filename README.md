@@ -81,3 +81,5 @@ For any queries or issues, feel free to reach out:
 GitHub: Vishal-jain-01
 
 Email: vishal112006jain@gmail.com
+
+Linked in : www.linkedin.com/in/vishal-jain-11vj2006
