@@ -128,7 +128,9 @@ body {
 
                 // Parse the response and display the tire accuracy
                 const result = await response.json();
-                document.getElementById("output").innerText = `Tire Accuracy: ${result.tire_accuracy}`;
+                let boundedAccuracy = Math.min(100, Math.max(0, result.tire_accuracy));
+        document.getElementById("output").innerText = `Tire Accuracy: ${boundedAccuracy.toFixed(2)}%`;
+
             } catch (error) {
                 console.error("Error:", error);
                 document.getElementById("output").innerText = "An error occurred.";
@@ -149,15 +151,7 @@ body {
             });
         });
     </script>
-    <script>
-        window.onload = function () {
-            // Check if the user came from the index page
-            if (sessionStorage.getItem("fromIndex") === "true") {
-                alert("You are now on the Tire Entry Form. Please ensure accurate measurements before checking the accuracy.");
-                sessionStorage.removeItem("fromIndex"); // Remove flag after showing alert
-            }
-        };
-    </script>
+    
     
 </body>
 </html>
