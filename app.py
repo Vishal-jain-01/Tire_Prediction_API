@@ -50,6 +50,18 @@ def predict():
         inputs = np.array([load_index, width, selling_price])
         prediction = np.dot(inputs, beta) + intercept
 
+         # Limit prediction between 0 and 100
+        prediction = max(0, min(100, prediction))
+
+        # Log the input and prediction
+        log_data = {
+            'LoadIndex': load_index,
+            'Width': width,
+            'SellingPrice': selling_price,
+            'Prediction': prediction
+        }
+        log_prediction(log_data)  # Call the function to log data
+
         return jsonify({'tire_accuracy': prediction})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
