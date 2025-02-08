@@ -18,7 +18,7 @@ Installation & Setup
 
 1. Clone the Repository
 
-git clone https://github.com/yourusername/tyre-accuracy-prediction.git
+git clone https://github.com/Vishal-jain-01/tyre-accuracy-prediction.git
 cd tyre-accuracy-prediction
 
 2. Install Dependencies
