@@ -4,6 +4,7 @@ import scipy.io
 from flask_cors import CORS
 import os
 import scipy.io
+import datetime
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app)
@@ -12,6 +13,15 @@ CORS(app)
 mat = scipy.io.loadmat('model_coeffs.mat')  # Replace with the actual file path
 beta = mat['beta'].flatten()  # Flatten to a 1D array
 intercept = mat['intercept'][0][0]  # Extract the scalar value
+
+
+
+# Create a simple log file
+def log_prediction(data):
+    with open("prediction_logs.txt", "a") as file:
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        file.write(f"{timestamp} - {data}\n")
+
 
 # Home route should show the Welcome page
 @app.route('/')
